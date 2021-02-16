@@ -1,5 +1,6 @@
 import View2D from './VTKViewport/View2D';
 import View3D from './VTKViewport/View3D';
+import ViewGeometry from './VTKViewport/ViewGeometry'
 import vtkInteractorStyleMPRSlice from './VTKViewport/vtkInteractorStyleMPRSlice.js';
 import vtkInteractorStyleMPRWindowLevel from './VTKViewport/vtkInteractorStyleMPRWindowLevel.js';
 import vtkInteractorStyleMPRCrosshairs from './VTKViewport/vtkInteractorStyleMPRCrosshairs.js';
@@ -18,6 +19,7 @@ import EVENTS from './events.js';
 export {
   View2D,
   View3D,
+  ViewGeometry,
   ViewportOverlay,
   ViewportData,
   getImageData,

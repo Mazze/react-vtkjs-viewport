@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import VTKBasicExample from './VTKBasicExample.js';
+import VTKGeometry from './VTKGeometry.js';
 import VTKFusionExample from './VTKFusionExample.js';
 import VTKMPRPaintingExample from './VTKMPRPaintingExample.js';
 import VTKCornerstonePaintingSyncExample from './VTKCornerstonePaintingSyncExample.js';
@@ -40,6 +41,12 @@ function Index() {
     {
       title: 'Basic Usage',
       url: '/basic',
+      text:
+        'How to use the component to render an array of vtkVolumes and manipulate their RGB Transfer Functions.',
+    },
+    {
+      title: 'Basic Geometry',
+      url: '/geometry',
       text:
         'How to use the component to render an array of vtkVolumes and manipulate their RGB Transfer Functions.',
     },
@@ -143,6 +150,7 @@ function AppRouter() {
 
   // TODO: There is definitely a better way to do this
   const basic = () => Example({ children: <VTKBasicExample /> });
+  const geometry = () => Example({ children: <VTKGeometry /> });
   const fusion = () => Example({ children: <VTKFusionExample /> });
   const painting = () => Example({ children: <VTKMPRPaintingExample /> });
   const loadImage = () => Example({ children: <VTKLoadImageDataExample /> });
@@ -160,6 +168,7 @@ function AppRouter() {
       <Switch>
         <Route exact path="/" component={Index} />
         <Route exact path="/basic/" render={basic} />
+        <Route exact path="/geometry/" render={geometry} />
         <Route exact path="/fusion/" render={fusion} />
         <Route exact path="/painting" render={painting} />
         <Route exact path="/cornerstone-sync-painting" render={synced} />
